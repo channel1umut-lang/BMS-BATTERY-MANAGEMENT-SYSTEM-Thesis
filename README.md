@@ -1,6 +1,6 @@
 # Battery Management System (BMS): Thesis Project
 
-A complete battery management system for a **20-cell series Li-ion pack (~84 V)**, from schematic and custom PCB to assembled hardware and STM32 firmware. Developed as a thesis project at Sakarya University of Applied Sciences.
+A complete battery management system for a **10-cell series Li-ion pack**, from schematic and custom PCB to assembled hardware and STM32 firmware. Developed as a thesis project at Sakarya University of Applied Sciences.
 
 <p align="center">
   <img src="bms_photo/11-board-running.png" width="49%" alt="Assembled BMS board running with balancing LEDs active">
@@ -15,9 +15,9 @@ A complete battery management system for a **20-cell series Li-ion pack (~84 V)*
 
 | Function | Implementation |
 |---|---|
-| **Cell voltage monitoring** | 20 cells measured through resistor dividers on 4 ADCs with DMA, software-filtered and individually calibrated per channel |
+| **Cell voltage monitoring** | 10 cells measured through resistor dividers on 14 ADC channels with DMA, software-filtered and individually calibrated per channel |
 | **Passive cell balancing** | Any cell more than **60 mV above the pack average** has its bleed resistor switched on; outputs are reset every cycle |
-| **State of charge (SoC)** | Estimated from total pack voltage via a lookup table (84 V = 100%) |
+| **State of charge (SoC)** | Estimated from total pack voltage via a lookup table |
 | **Thermal management** | 5 temperature sensors; buzzer warning above 35 °C, cooling fan above 55 °C |
 | **Telemetry** | Cell voltages, temperatures, SoC and pack voltage streamed over UART as a framed packet for a PC monitoring interface |
 | **Hardware** | Custom PCB with LM2596 buck regulator, MOSFET drivers for fan / buzzer / contactor, and status LEDs |
