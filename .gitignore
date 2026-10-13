@@ -1,0 +1,9 @@
+# STM32CubeIDE build output
+Debug/
+Release/
+*.elf
+*.map
+*.list
+*.o
+*.d
+*.su
